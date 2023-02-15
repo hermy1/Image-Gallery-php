@@ -1,0 +1,55 @@
+
+/* 
+
+Author: Herman 
+Class: inf255
+HMW: 2
+
+*/
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* vars colors */
+:root {
+  --dark: #0E1A28;
+  --orangeDark: #ED9736;
+  --orangeLight: #F29F32;
+  --blueLight:#5C9BD9;
+  --blueDark: #3C7DC0;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    /* background-color: #ffa; */
+    background-color: #fff;
+}
+nav{
+    background-color: var(--dark);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand  {
+    color: var(--orangeLight) !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.nav-link{
+    color: var(--orangeDark) !important;
+}
+
+.card-body > img{
+    width:15%;
+
+}
+/* footer{
+    background-color: var(--blueLight);
+    padding: 3rem;
+    justify-content: space-between;
+    align-items: center;
+} */
