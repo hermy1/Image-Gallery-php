@@ -1,16 +1,15 @@
 <?php
 session_start();
 
+//gallery selection from form 
 $_SESSION['gallery'] ?? [];
-//get all images in selected gallery
+
+// get errors
+$_SESSION['error'] ?? [];
 
 //get all images in selected gallery
 $images = $_SESSION['files'] ?? [];
-// $images = $_SESSION['files'];
 
-
-
-print_r($images);
 
 ?>
 
@@ -66,8 +65,13 @@ print_r($images);
 
             </div>
             <button type="submit" name='submit' class="btn btn-primary">Submit</button>
-            <div class="alert alert-danger mt-3" role="alert">
-               Some Word
+            <div class="text-danger mt-3" role="alert">
+              <?php
+              if(isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+              }
+              ?>
             </div>
             
           </form>
@@ -80,7 +84,6 @@ print_r($images);
               <div class="card">
                 <div class="card-body">
                   <?php
-                  //if session
                   if(isset($images)){
                     foreach($images as $img){ ?>
                       <img src='<?php echo $img ?>' class='card-img-top m-3' alt='...'>
@@ -100,12 +103,12 @@ print_r($images);
 
 
   </aside>
-  <!-- <footer class="text-center text-white">
+  <footer class="text-center text-white">
     <div>
       © 2020 Copyright:
       <p class="text-white" href="#">Herman</p>
     </div>
-  </footer> -->
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="js/myscripts.js" type="text/javascript"></script>
 </body>
